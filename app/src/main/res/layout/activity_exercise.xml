@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExerciseActivity"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/exerciseActivityAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/exerciseActivityToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/status_bar_color"
+            app:titleTextColor="@color/white"
+            tools:title="Tricep and Abs"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24">
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/exerciseActivityAppBarLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/lLrVExerciseStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rVExerciseStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </LinearLayout>
+
+
+
+            <ImageView
+                android:id="@+id/exerciseImgView"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                tools:src="@drawable/ic_lunges"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="8dp"
+                android:contentDescription="@string/image_of_the_exercise"
+                app:layout_constraintTop_toBottomOf="@id/lLrVExerciseStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+            </ImageView>
+
+            <LinearLayout
+                android:id="@+id/lLTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exerciseImgView"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tVTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/get_ready_for"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/upcomingExerciseTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    tools:visibility="gone"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:textColor="@color/status_bar_color" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutForRestProgressBar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="60dp"
+                android:background="@drawable/ic_circle_image_for_progress_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lLTextView">
+
+                <ProgressBar
+                    android:id="@+id/progressBarRest"
+                    android:layout_width="100dp"
+                    style="?android:progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/circle"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:max="10"
+                    android:progress="10"
+                    android:rotation="-90"/>
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:contentDescription="@string/progress_bar"
+                    android:layout_gravity="center"
+                    android:src="@drawable/circular_plate_behind_progress_text">
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tVProgressRest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    tools:text="10"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white">
+                </TextView>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tVNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/note_press_the_play_button_to_start"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/frameLayoutForRestProgressBar"
+                app:layout_constraintBottom_toTopOf="@id/lLBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/lLBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayoutForRestProgressBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/llPauseOrPlayBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageButton
+                        android:id="@+id/pauseOrPlayBtn"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:elevation="5dp"
+                        android:contentDescription="@string/pause_the_timer"
+                        android:background="@drawable/ripple_without_bg"
+                        android:src="@drawable/ic_baseline_play_circle_outline_24">
+                    </ImageButton>
+
+                    <TextView
+                        android:id="@+id/tVPauseOrPlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/play"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="18sp">
+                    </TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lLRestartExerciseBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="40dp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageButton
+                        android:id="@+id/restartExerciseBtn"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:elevation="5dp"
+                        android:contentDescription="@string/restart_the_exercise"
+                        android:background="@drawable/ripple_without_bg"
+                        android:src="@drawable/ic_baseline_replay_30_24">
+                    </ImageButton>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/replay"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="18sp">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lLBtn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/lLBtn"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/llRestartSetBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageButton
+                        android:id="@+id/restartSetBtn"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:elevation="5dp"
+                        android:contentDescription="@string/restart_the_set"
+                        android:background="@drawable/ripple_without_bg"
+                        android:src="@drawable/ic_baseline_redo_24">
+                    </ImageButton>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="@string/restart_set"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextContrastCheck" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llBtnHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginStart="40dp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageButton
+                        android:id="@+id/homeBtn"
+                        android:layout_width="70dp"
+                        android:layout_gravity="center"
+                        android:layout_height="70dp"
+                        android:elevation="5dp"
+                        android:contentDescription="@string/click_to_go_back_to_home"
+                        android:background="@drawable/ripple_without_bg"
+                        android:src="@drawable/ic_baseline_home_24">
+                    </ImageButton>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="@string/home"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextContrastCheck" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

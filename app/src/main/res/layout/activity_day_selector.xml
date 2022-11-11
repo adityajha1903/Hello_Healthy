@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DaySelectorActivity"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/exerciseSelectorActivityAppBarLayoutActivityDS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/exerciseSelectorActivityToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/status_bar_color"
+            app:titleTextColor="@color/white"
+            app:title="Set Types"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24">
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_bg_exercise_selector"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseSelectorActivityAppBarLayoutActivityDS"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:id="@+id/lLManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="16dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/miccellenious"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="4dp"
+                            android:background="@drawable/card_view_ripple"
+                            android:gravity="center"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/miccellenious"
+                                android:src="@drawable/ic_miccellenious_exercise_img"
+                                tools:ignore="ImageContrastCheck" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:text="@string/miccellenious"
+                                android:textSize="22sp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/miscellaniousExerciseAddRemoveIB"
+                            android:layout_width="48dp"
+                            android:contentDescription="@string/add_or_remove_exercises_from_miscellaneous_set"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_height="48dp"
+                            android:background="#00000000"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_baseline_playlist_add_24"/>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="16dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/chestDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="4dp"
+                            android:background="@drawable/card_view_ripple"
+                            android:gravity="center"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/chest_day"
+                                android:src="@drawable/ic_chest_img"
+                                tools:ignore="ImageContrastCheck" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:text="@string/chest_day"
+                                android:textSize="22sp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/chestExerciseAddRemoveIB"
+                            android:layout_width="48dp"
+                            android:contentDescription="@string/add_or_remove_exercises_from_chest_set"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_height="48dp"
+                            android:background="#00000000"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_baseline_playlist_add_24"/>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="16dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/backDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="4dp"
+                            android:background="@drawable/card_view_ripple"
+                            android:gravity="center"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/back_day"
+                                android:src="@drawable/ic_back_img"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:text="@string/back_day"
+                                android:textSize="22sp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/backExerciseAddRemoveIB"
+                            android:layout_width="48dp"
+                            android:contentDescription="@string/add_or_remove_exercises_from_back_set"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_height="48dp"
+                            android:background="#00000000"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_baseline_playlist_add_24"/>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="16dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/bicepDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="4dp"
+                            android:background="@drawable/card_view_ripple"
+                            android:gravity="center"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/bicep_day"
+                                android:src="@drawable/ic_bicep_img"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:text="@string/bicep_day"
+                                android:textSize="22sp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/bicepExerciseAddRemoveIB"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="#00000000"
+                            android:contentDescription="@string/add_or_remove_exercises_from_bicep_set"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_baseline_playlist_add_24"
+                            tools:ignore="ImageContrastCheck" />
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="16dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/tricepsAndAbsDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="4dp"
+                            android:background="@drawable/card_view_ripple"
+                            android:gravity="center"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/triceps_and_abs_day"
+                                android:src="@drawable/ic_tricep_img"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:text="@string/triceps_and_abs_day"
+                                android:textSize="22sp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/tricepAndAbsExerciseAddRemoveIB"
+                            android:layout_width="48dp"
+                            android:contentDescription="@string/add_or_remove_exercises_from_tricep_and_abs_set"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_height="48dp"
+                            android:background="#00000000"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_baseline_playlist_add_24"/>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="16dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/shoulderDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="4dp"
+                            android:background="@drawable/card_view_ripple"
+                            android:gravity="center"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/shoulders_day"
+                                android:src="@drawable/ic_shoulders_img"
+                                tools:ignore="ImageContrastCheck" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:text="@string/shoulders_day"
+                                android:textSize="22sp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/shouldersExerciseAddRemoveIB"
+                            android:layout_width="48dp"
+                            android:contentDescription="@string/add_or_remove_exercises_from_shoulder_set"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_height="48dp"
+                            android:background="#00000000"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_baseline_playlist_add_24"/>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="16dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/legDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="4dp"
+                            android:background="@drawable/card_view_ripple"
+                            android:gravity="center"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:contentDescription="@string/legs_day"
+                                android:src="@drawable/ic_leg_img"
+                                tools:ignore="ImageContrastCheck" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:text="@string/legs_day"
+                                android:textSize="22sp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/legsExerciseAddRemoveIB"
+                            android:layout_width="48dp"
+                            android:contentDescription="@string/add_or_remove_exercises_from_leg_set"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_height="48dp"
+                            android:background="#00000000"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_baseline_playlist_add_24"/>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
